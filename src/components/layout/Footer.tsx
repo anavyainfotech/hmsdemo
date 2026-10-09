@@ -71,7 +71,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Anavya Hospital. All rights reserved.
+            © 2024 Anavya Hospital. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>
