@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DayPicker } from 'react-day-picker';
 import { format, isBefore, startOfToday } from 'date-fns';
 import 'react-day-picker/dist/style.css';
@@ -47,7 +47,11 @@ export default function BookAppointmentPage() {
     phone: '',
   });
 
-  const today = startOfToday();
+  const [today, setToday] = useState<Date | undefined>(undefined);
+
+  useEffect(() => {
+    setToday(startOfToday());
+  }, []);
 
   const handleNext = () => setStep((prev) => prev + 1);
   const handleBack = () => setStep((prev) => prev - 1);
@@ -194,7 +198,7 @@ export default function BookAppointmentPage() {
                         mode="single"
                         selected={formData.date}
                         onSelect={(date) => setFormData({ ...formData, date, time: '' })}
-                        disabled={(date) => isBefore(date, today)}
+                        disabled={(date) => !today || isBefore(date, today)}
                         showOutsideDays
                         className="rdp-calendar"
                       />
