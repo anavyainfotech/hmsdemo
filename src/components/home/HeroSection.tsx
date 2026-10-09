@@ -4,10 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
+
 
   return (
     <section className="relative overflow-hidden bg-[#FAFBFF] pt-10 pb-20 lg:pt-12 lg:pb-28">
@@ -39,22 +36,22 @@ export default function HeroSection() {
             }}
             className="max-w-2xl"
           >
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-gray-100 text-gray-800 text-sm font-semibold mb-8">
+            <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-gray-100 text-gray-800 text-sm font-semibold mb-8">
               Accepting New Patients Today
             </motion.div>
 
-            <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl font-extrabold tracking-tight text-[#0B1221] mb-6 leading-[1.1]">
+            <motion.h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight text-[#0B1221] mb-6 leading-[1.1]">
               Premium Care. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500">
                 Exceptional Life.
               </span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-lg leading-8 text-gray-600 mb-10 max-w-lg font-medium">
+            <motion.p className="text-lg leading-8 text-gray-600 mb-10 max-w-lg font-medium">
               Elevate your healthcare experience. Anavya Hospital combines world-class medical expertise with luxurious comfort and cutting-edge technology.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-5">
+            <motion.div className="flex flex-col sm:flex-row gap-5">
               <Link
                 href="/book-appointment"
                 className="inline-flex justify-center items-center rounded-full bg-[#0B1221] px-8 py-4 text-base font-semibold text-white shadow-[0_8px_30px_rgb(11,18,33,0.2)] hover:bg-gray-800 hover:-translate-y-1 transition-all duration-300"
@@ -70,7 +67,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Trust Indicators */}
-            <motion.div variants={fadeUp} className="mt-14 flex items-center gap-8">
+            <motion.div className="mt-14 flex items-center gap-8">
               <div className="flex -space-x-4">
                 <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Patient" />
                 <img className="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Patient" />
